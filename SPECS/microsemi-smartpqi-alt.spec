@@ -7,12 +7,12 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
-Version: 2.1.22_040
+Version: 2.1.24_046
 Release: 1%{?dist}
 License: GPL
 
 # Extracted from latest XS driver disk
-Source0: microsemi-smartpqi-2.1.22_040.tar.gz
+Source0: microsemi-smartpqi-2.1.24_046.tar.gz
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
@@ -53,6 +53,10 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Mon Aug 21 2023 Gael Duperrey <gduperrey@vates.fr> - 2.1.24_046-1.1
+- Update to version 2.1.24_046-1
+- Synced from XS driver SRPM microsemi-smartpqi-2.1.24_046-1.xs8~2_1.src.rpm
+
 * Wed May 10 2023 Gael Duperrey <gduperrey@vates.fr> - 2.1.22_040-1
 - initial package, version 2.1.22_040-1
 
