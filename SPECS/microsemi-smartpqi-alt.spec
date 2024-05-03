@@ -5,14 +5,17 @@
 # XCP-ng: install to the override directory
 %define module_dir override
 
+## Keeps rpmlint happy
+%{!?kernel_version: %global kernel_version dummy}
+
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
-Version: 2.1.24_046
+Version: 2.1.28_025
 Release: 1%{?dist}
 License: GPL
 
 # Extracted from latest XS driver disk
-Source0: microsemi-smartpqi-2.1.24_046.tar.gz
+Source0: microsemi-smartpqi-2.1.28_025.tar.gz
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
@@ -53,6 +56,10 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Fri May 03 2024 Gael Duperrey <gduperrey@vates.tech> - 2.1.28_025-1
+- Update to version 2.1.28_025
+- Synced from XS driver SRPM microsemi-smartpqi-2.1.28_025-1.xs8~2_1.src.rpm
+
 * Mon Aug 21 2023 Gael Duperrey <gduperrey@vates.fr> - 2.1.24_046-1.1
 - Update to version 2.1.24_046-1
 - Synced from XS driver SRPM microsemi-smartpqi-2.1.24_046-1.xs8~2_1.src.rpm
