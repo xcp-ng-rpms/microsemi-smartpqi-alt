@@ -11,7 +11,10 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
 Version: 2.1.28_025
-Release: 1%{?dist}
+Release: 2%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPL
 
 # Extracted from latest XS driver disk
@@ -56,10 +59,12 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Mon Aug 31 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 2.1.28_025-2
+- Rebuild for kernel v4.19.325-cip134
+
 * Fri May 03 2024 Gael Duperrey <gduperrey@vates.tech> - 2.1.28_025-1
 - Update to version 2.1.28_025
 - Synced from XS driver SRPM microsemi-smartpqi-2.1.28_025-1.xs8~2_1.src.rpm
 
 * Wed May 10 2023 Gael Duperrey <gduperrey@vates.fr> - 2.1.22_040-1
 - initial package, version 2.1.22_040-1
-
