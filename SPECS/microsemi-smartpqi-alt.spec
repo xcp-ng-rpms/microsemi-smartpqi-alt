@@ -11,7 +11,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
 Version: 2.1.28_025
-Release: 1.0.kernelpreview.1%{?dist}
+Release: 1.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPL
 
 # Extracted from latest XS driver disk
